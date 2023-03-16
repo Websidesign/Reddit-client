@@ -14,8 +14,11 @@ const Popular = () => {
     dispatch(fetchPosts(`https://www.reddit.com/r/popular.json`));
   }, [dispatch]);
 
+  useEffect(() => {
+    document.title = "Reddit";
+  }, []);
+
   const postsState = useSelector(selectPosts);
-  console.log(postsState);
   return (
     <div className="pt-20">
       <div className="hidden xl:block w-56 z-30 fixed h-full min-h-screen">

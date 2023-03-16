@@ -22,6 +22,10 @@ const Search = () => {
 
   const searchResults = useSelector(selectSearchResults);
 
+  useEffect(() => {
+    document.title = "Search: " + param + " - Reddit";
+  }, [param]);
+
   return (
     <div className="pt-20">
       <div className="hidden xl:block w-56 z-30 fixed h-full min-h-screen">

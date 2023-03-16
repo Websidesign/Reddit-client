@@ -18,6 +18,10 @@ const Subreddit = () => {
     dispatch(fetchSubreddit(`https://www.reddit.com/${param}.json`));
   }, [dispatch, param]);
 
+  useEffect(() => {
+    document.title = param + " - Reddit";
+  }, [param]);
+
   return (
     <div className="pt-20">
       <div className="hidden xl:block w-56 z-30 fixed h-full min-h-screen">
